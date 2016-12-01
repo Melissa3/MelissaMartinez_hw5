@@ -1,0 +1,20 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import corner
+
+data = np.genfromtxt('iteraciones.csv', delimiter=',')
+
+#fig,ax = plt.subplots()
+#fig.set_size_inches((6,6))
+#ax.plot(data[:,0], data[:,1], '.', alpha=0.2, label='random walk')
+#ax.plot(data[0,0], data[0,1], '*', ms=10, color='red', label='start')
+#ax.plot(data[-1,0], data[-1,1], '*', ms=10, color='green', label='end')
+#ax.set_xlabel('x'); ax.set_ylabel('y')
+#ax.grid()
+#ax.legend(loc='best', fontsize= 8)
+#fig.savefig('random_walk.png')
+
+
+
+figure = corner.corner(data)
+plt.savefig('epicentro.pdf')

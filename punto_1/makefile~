@@ -1,0 +1,12 @@
+
+epicentro.pdf: grafica.py iteraciones.csv
+	python grafica.py
+
+iteraciones.csv: a.out
+	./a.out
+
+a.out: epicenter.c datos.csv
+	gcc epicenter.c -lm -o a.out
+
+clean:
+	rm a.out 
